@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
-function App() {
+import LinksCard from './components/LinksCard/LinksCard'
+import NewLink from './components/NewLink/NewLink'
+
+const links = []
+
+function App () {
+  const [listLinks, setListLinks] = useState([])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <ul className='nav'>
+        <li>homework.com</li>
+        <li className='right'><b>Link</b>VOTE Challenge</li>
+      </ul>
+      <Router>
+        <Switch>
+          <Route path='/newlink'>
+            <NewLink
+              setListLinks={setListLinks}
+              listLinks={listLinks}
+            />
+          </Route>
+          <Route exact path='/'>
+            <LinksCard
+              setListLinks={setListLinks}
+              listLinks={listLinks}
+            />
+          </Route>
+        </Switch>
+      </Router>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

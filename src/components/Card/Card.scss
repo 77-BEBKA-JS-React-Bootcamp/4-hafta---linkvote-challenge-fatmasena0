@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+.card-wrapper {
+    display: inline-flex;
+    .card-container {
+        display: flex;
+        align-items: left;
+        width: 325px;
+        height: 100px;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        .link-container {
+            margin-left: 10px;
+            h4 {
+                margin-top: 0px;
+            }
+            h5 {
+                margin-top: 3px;
+                color: silver;
+            }
+            .btn-default {
+                color: #b8b8b8;
+                background-color: transparent;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+    .card-container:hover {
+        background-color: #f8f8f8;
+        
+    }
+    img {
+        width: 25px;
+        height: 25px;
+        right: 0px;
+        margin: 0px;
+        margin-left: -14px;
+        margin-top: -10px;
+        position: relative;
+    }
+}
